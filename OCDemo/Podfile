@@ -4,10 +4,14 @@ platform :ios, '13.0' # 指定支持的平台和最低版本
 use_frameworks!
 
 target 'OCDemo' do
+  # 网上的库
   pod 'Masonry'
+  
+  # 本地库内容
+  pod 'BLCategorys', :path => '../../iOS_BasicComponents'
 end
 
-
+# 用于将三方库与本项目最低支持版本强制统一为13.0
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
