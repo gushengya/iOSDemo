@@ -1,0 +1,45 @@
+# Xcode的编译缓存目录
+DerivedData/
+# 项目编译出来的目录
+build/
+
+
+
+# 保存的是个人开发习惯的数据不用提交
+*.xcuserstate
+# 保存的断点需要忽略
+xcuserdata/
+
+
+
+# CocoaPods下载的所有第三方库任何人只要执行pod install都会重新下载不用提交
+Pods/
+
+
+
+# 表示虽然前面可能忽略了一些东西但是Podfile必须提交
+!Podfile
+# 记录的是三方库的版本，因此当A开发变动时B经过pod install也会得到相同的结果
+!Podfile.lock
+
+
+
+# 如果项目使用Carthage则需要忽略
+Carthage/Build/
+
+
+
+# Swift Package Manager（SwiftPM）的编译目录都是缓存不用提交
+.build/
+
+
+
+# 如果用了Fastlane它会生成测试报告report.xml、截图screenshots、HTML Preview.html自动生成不用提交
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+
+
+
+# macOS Finder自动生成的内容，例如：记录图标排列、窗口大小、排序方式等
+.DS_Store
