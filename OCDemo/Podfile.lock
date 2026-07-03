@@ -1,23 +1,25 @@
 PODS:
-  - BLCategorys (0.0.1)
+  - BLCategorys (0.0.5):
+    - BLCategorys/Foundation (= 0.0.5)
+    - BLCategorys/UIKit (= 0.0.5)
+  - BLCategorys/Foundation (0.0.5)
+  - BLCategorys/UIKit (0.0.5)
   - Masonry (1.1.0)
 
 DEPENDENCIES:
-  - BLCategorys (from `../../iOS_BasicComponents`)
+  - BLCategorys
   - Masonry
 
 SPEC REPOS:
+  "git@github.com:gushengya/iOS_SpecLibrary.git":
+    - BLCategorys
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - Masonry
 
-EXTERNAL SOURCES:
-  BLCategorys:
-    :path: "../../iOS_BasicComponents"
-
 SPEC CHECKSUMS:
-  BLCategorys: bb1bea6d9758185e7b9771a621945407a257e3f0
+  BLCategorys: 56d37df6eed864fa45fe6b1c8fcc52190ed22341
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 07383bd7919088b58b09955f7529544bb9bf4014
+PODFILE CHECKSUM: 35366aefbedc6e3f70d13f5d6667b0b16371de64
 
 COCOAPODS: 1.16.2

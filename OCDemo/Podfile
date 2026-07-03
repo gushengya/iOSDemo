@@ -1,4 +1,5 @@
 source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+source 'git@github.com:gushengya/iOS_SpecLibrary.git'
 
 platform :ios, '13.0' # 指定支持的平台和最低版本
 use_frameworks!
@@ -6,9 +7,10 @@ use_frameworks!
 target 'OCDemo' do
   # 网上的库
   pod 'Masonry'
+  pod 'BLCategorys'
   
-  # 本地库内容
-  pod 'BLCategorys', :path => '../../iOS_BasicComponents'
+  # 本地库内容 :path指的是以当前Podfile文件所在目录为起点找到想要的.podspec文件所在目录为终点的相对路径
+#  pod 'BLCategorys', :path => '../../iOS_BasicComponents'
 end
 
 # 用于将三方库与本项目最低支持版本强制统一为13.0
