@@ -7,10 +7,12 @@ use_frameworks!
 target 'OCDemo' do
   # 网上的库
   pod 'Masonry'
-  pod 'BLCategorys'
+#  pod 'BLCategorys'
   
   # 本地库内容 :path指的是以当前Podfile文件所在目录为起点找到想要的.podspec文件所在目录为终点的相对路径
-#  pod 'BLCategorys', :path => '../../iOS_BasicComponents'
+  pod 'BLCategorys', :path => '../../iOS_BasicComponents'
+  pod 'BLProtocol', :path => '../../iOS_BasicComponents'
+  pod 'BLMonitor', :path => '../../iOS_BasicComponents'
 end
 
 # 用于将三方库与本项目最低支持版本强制统一为13.0

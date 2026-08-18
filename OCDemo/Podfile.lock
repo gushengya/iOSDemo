@@ -4,22 +4,38 @@ PODS:
     - BLCategorys/UIKit (= 0.0.5)
   - BLCategorys/Foundation (0.0.5)
   - BLCategorys/UIKit (0.0.5)
+  - BLMonitor (0.0.5):
+    - BLMonitor/Core (= 0.0.5)
+  - BLMonitor/Core (0.0.5)
+  - BLProtocol (0.0.5):
+    - BLProtocol/Core (= 0.0.5)
+  - BLProtocol/Core (0.0.5)
   - Masonry (1.1.0)
 
 DEPENDENCIES:
-  - BLCategorys
+  - BLCategorys (from `../../iOS_BasicComponents`)
+  - BLMonitor (from `../../iOS_BasicComponents`)
+  - BLProtocol (from `../../iOS_BasicComponents`)
   - Masonry
 
 SPEC REPOS:
-  "git@github.com:gushengya/iOS_SpecLibrary.git":
-    - BLCategorys
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - Masonry
 
+EXTERNAL SOURCES:
+  BLCategorys:
+    :path: "../../iOS_BasicComponents"
+  BLMonitor:
+    :path: "../../iOS_BasicComponents"
+  BLProtocol:
+    :path: "../../iOS_BasicComponents"
+
 SPEC CHECKSUMS:
-  BLCategorys: 56d37df6eed864fa45fe6b1c8fcc52190ed22341
+  BLCategorys: e3b1698e133f08cdc5d0ede96c620b79f1e70e0a
+  BLMonitor: bf154c053ee2012c20bd26f14117ff34234ae62e
+  BLProtocol: c69149ffa4a8c694f16677c31d8939d5fc73082d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 35366aefbedc6e3f70d13f5d6667b0b16371de64
+PODFILE CHECKSUM: dd593866e04c70dfb3ed8f1ed5db0db64ed21ad6
 
 COCOAPODS: 1.16.2
