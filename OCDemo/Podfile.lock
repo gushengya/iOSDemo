@@ -1,9 +1,20 @@
 PODS:
+  - BLAppearance (0.0.1):
+    - BLAppearance/Core (= 0.0.1)
+  - BLAppearance/Core (0.0.1)
   - BLCategorys (0.0.5):
     - BLCategorys/Foundation (= 0.0.5)
     - BLCategorys/UIKit (= 0.0.5)
   - BLCategorys/Foundation (0.0.5)
   - BLCategorys/UIKit (0.0.5)
+  - BLMainframe (0.0.1):
+    - BLMainframe/Core (= 0.0.1)
+  - BLMainframe/Core (0.0.1):
+    - BLModular
+    - BLProtocol
+  - BLModular (0.0.5):
+    - BLModular/Core (= 0.0.5)
+  - BLModular/Core (0.0.5)
   - BLMonitor (0.0.5):
     - BLMonitor/Core (= 0.0.5)
   - BLMonitor/Core (0.0.5)
@@ -13,7 +24,10 @@ PODS:
   - Masonry (1.1.0)
 
 DEPENDENCIES:
+  - BLAppearance (from `../../iOS_BasicComponents`)
   - BLCategorys (from `../../iOS_BasicComponents`)
+  - BLMainframe (from `../../iOS_BusinessComponents`)
+  - BLModular (from `../../iOS_BasicComponents`)
   - BLMonitor (from `../../iOS_BasicComponents`)
   - BLProtocol (from `../../iOS_BasicComponents`)
   - Masonry
@@ -23,7 +37,13 @@ SPEC REPOS:
     - Masonry
 
 EXTERNAL SOURCES:
+  BLAppearance:
+    :path: "../../iOS_BasicComponents"
   BLCategorys:
+    :path: "../../iOS_BasicComponents"
+  BLMainframe:
+    :path: "../../iOS_BusinessComponents"
+  BLModular:
     :path: "../../iOS_BasicComponents"
   BLMonitor:
     :path: "../../iOS_BasicComponents"
@@ -31,11 +51,14 @@ EXTERNAL SOURCES:
     :path: "../../iOS_BasicComponents"
 
 SPEC CHECKSUMS:
+  BLAppearance: 0d128e82100da06c2bbab39267c5864e79b0b172
   BLCategorys: e3b1698e133f08cdc5d0ede96c620b79f1e70e0a
+  BLMainframe: 89daea8dd72fae671ca13dfa4bfca1978abc4c16
+  BLModular: 720899b314f21c0dda1c635f88bbbd7348bc50ab
   BLMonitor: bf154c053ee2012c20bd26f14117ff34234ae62e
-  BLProtocol: c69149ffa4a8c694f16677c31d8939d5fc73082d
+  BLProtocol: 117a8795dac21bb0f9e7f4ed79efbd965319e1af
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: dd593866e04c70dfb3ed8f1ed5db0db64ed21ad6
+PODFILE CHECKSUM: 49538d8fd38889bf205e97e99471f6a9b07230bc
 
 COCOAPODS: 1.16.2

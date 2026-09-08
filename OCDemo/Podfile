@@ -4,18 +4,59 @@ source 'git@github.com:gushengya/iOS_SpecLibrary.git'
 platform :ios, '13.0' # 指定支持的平台和最低版本
 use_frameworks!
 
+# 本地组件仓库相对路径（以本 Podfile 所在目录为起点）
+# 新增组件仓库时，把相对路径加到这个数组即可
+LOCAL_COMPONENT_DIRS = [
+  '../../iOS_BasicComponents',
+  '../../iOS_BusinessComponents',
+].freeze
+
+# 按库名在 LOCAL_COMPONENT_DIRS 中查找同名 .podspec，找到后以本地 :path 引入
+# 示例入口：local_pod 'BLAppearance' 时，name = "BLAppearance"
+def local_pod(name)
+  # 依次取出仓库相对路径
+  # 第 1 轮：relative_dir = "../../iOS_BasicComponents"
+  # 第 2 轮：relative_dir = "../../iOS_BusinessComponents"
+  LOCAL_COMPONENT_DIRS.each do |relative_dir|
+    # 以 Podfile 所在目录为起点，拼出 podspec 的绝对路径
+    # 以 BLAppearance 第 1 轮为例：
+    # spec = "/Users/user/Documents/git私有库/iOS_BasicComponents/BLAppearance.podspec"
+    spec = File.expand_path("#{relative_dir}/#{name}.podspec", __dir__)
+    # File.exist?(spec) 为 false 时跳过本轮，进入下一个仓库
+    # 例：BLMainframe 在 BasicComponents 中不存在 → next，去搜 BusinessComponents
+    # 例：BLAppearance 在 BasicComponents 中存在 → 不跳过，继续往下执行
+    next unless File.exist?(spec)
+
+    # 找到文件后按本地路径引入，效果等同于手写：
+    # pod 'BLAppearance', :path => '../../iOS_BasicComponents'
+    pod name, :path => relative_dir
+    # 引入成功后立刻结束方法，不再检查后续仓库
+    # 例：BLAppearance 已在 BasicComponents 引入，不会再去 BusinessComponents 搜一遍
+    return
+  end
+  # 两个仓库都找不到时才会执行到这里
+  # 例：local_pod 'NotExist' 会抛出：
+  # 未找到 NotExist.podspec，已搜索: ../../iOS_BasicComponents, ../../iOS_BusinessComponents
+  raise "未找到 #{name}.podspec，已搜索: #{LOCAL_COMPONENT_DIRS.join(', ')}"
+end
+
 target 'OCDemo' do
   # 网上的库
   pod 'Masonry'
-#  pod 'BLCategorys'
-  
-  # 本地库内容 :path指的是以当前Podfile文件所在目录为起点找到想要的.podspec文件所在目录为终点的相对路径
-  pod 'BLCategorys', :path => '../../iOS_BasicComponents'
-  pod 'BLProtocol', :path => '../../iOS_BasicComponents'
-  pod 'BLMonitor', :path => '../../iOS_BasicComponents'
+
+  # 本地库白名单：只导入这里列出的库，目录里有但未列出的不会引入
+  # 新增本地库时，把库名加进这个列表（库名需与 .podspec 文件名一致）
+  %w[
+    BLCategorys
+    BLModular
+    BLMonitor
+    BLProtocol
+    BLMainframe
+    BLAppearance
+  ].each { |name| local_pod name }
 end
 
-# 用于将三方库与本项目最低支持版本强制统一为13.0
+# 用于将三方库与本项目最低支持版本强制统一为 13.0
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
