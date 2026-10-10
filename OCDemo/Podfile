@@ -1,7 +1,7 @@
 source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 source 'git@github.com:gushengya/iOS_SpecLibrary.git'
 
-platform :ios, '13.0' # 指定支持的平台和最低版本
+platform :ios, '15.0' # 指定支持的平台和最低版本
 use_frameworks!
 
 # 本地组件仓库相对路径（以本 Podfile 所在目录为起点）
@@ -53,6 +53,10 @@ target 'OCDemo' do
     BLProtocol
     BLMainframe
     BLAppearance
+    BLDataStore
+    BLCommonViews
+    BLDefines
+    BLRouter
   ].each { |name| local_pod name }
 end
 

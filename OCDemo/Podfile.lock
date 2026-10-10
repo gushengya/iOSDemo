@@ -7,11 +7,29 @@ PODS:
     - BLCategorys/UIKit (= 0.0.5)
   - BLCategorys/Foundation (0.0.5)
   - BLCategorys/UIKit (0.0.5)
+  - BLCommonViews (0.0.5):
+    - BLCommonViews/Core (= 0.0.5)
+  - BLCommonViews/Core (0.0.5):
+    - BLDefines
+  - BLDataStore (0.0.5):
+    - BLDataStore/Core (= 0.0.5)
+  - BLDataStore/Core (0.0.5):
+    - MMKV
+  - BLDefines (0.0.5):
+    - BLDefines/Core (= 0.0.5)
+  - BLDefines/Core (0.0.5):
+    - BLAppearance
   - BLMainframe (0.0.1):
     - BLMainframe/Core (= 0.0.1)
   - BLMainframe/Core (0.0.1):
+    - BLAppearance
+    - BLCommonViews
+    - BLDataStore
+    - BLDefines
     - BLModular
     - BLProtocol
+    - BLRouter
+    - Masonry
   - BLModular (0.0.5):
     - BLModular/Core (= 0.0.5)
   - BLModular/Core (0.0.5)
@@ -21,25 +39,44 @@ PODS:
   - BLProtocol (0.0.5):
     - BLProtocol/Core (= 0.0.5)
   - BLProtocol/Core (0.0.5)
+  - BLRouter (0.0.5):
+    - BLRouter/Core (= 0.0.5)
+  - BLRouter/Core (0.0.5):
+    - BLDefines
   - Masonry (1.1.0)
+  - MMKV (2.4.0):
+    - MMKVCore (~> 2.4.0)
+  - MMKVCore (2.4.0)
 
 DEPENDENCIES:
   - BLAppearance (from `../../iOS_BasicComponents`)
   - BLCategorys (from `../../iOS_BasicComponents`)
+  - BLCommonViews (from `../../iOS_BasicComponents`)
+  - BLDataStore (from `../../iOS_BasicComponents`)
+  - BLDefines (from `../../iOS_BasicComponents`)
   - BLMainframe (from `../../iOS_BusinessComponents`)
   - BLModular (from `../../iOS_BasicComponents`)
   - BLMonitor (from `../../iOS_BasicComponents`)
   - BLProtocol (from `../../iOS_BasicComponents`)
+  - BLRouter (from `../../iOS_BasicComponents`)
   - Masonry
 
 SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - Masonry
+    - MMKV
+    - MMKVCore
 
 EXTERNAL SOURCES:
   BLAppearance:
     :path: "../../iOS_BasicComponents"
   BLCategorys:
+    :path: "../../iOS_BasicComponents"
+  BLCommonViews:
+    :path: "../../iOS_BasicComponents"
+  BLDataStore:
+    :path: "../../iOS_BasicComponents"
+  BLDefines:
     :path: "../../iOS_BasicComponents"
   BLMainframe:
     :path: "../../iOS_BusinessComponents"
@@ -49,16 +86,24 @@ EXTERNAL SOURCES:
     :path: "../../iOS_BasicComponents"
   BLProtocol:
     :path: "../../iOS_BasicComponents"
+  BLRouter:
+    :path: "../../iOS_BasicComponents"
 
 SPEC CHECKSUMS:
   BLAppearance: 0d128e82100da06c2bbab39267c5864e79b0b172
   BLCategorys: e3b1698e133f08cdc5d0ede96c620b79f1e70e0a
-  BLMainframe: 89daea8dd72fae671ca13dfa4bfca1978abc4c16
+  BLCommonViews: 5f3045c5c977c9b9c270fd2deeb7f661902c854f
+  BLDataStore: ff0837a4f1229e7ab86beb9e1cf4098e816e425b
+  BLDefines: 35ce02bb667d3aa3c258054b957c82554f36fed0
+  BLMainframe: 62c6523eb95cd5c71ceb793eecad521353cf28f7
   BLModular: 720899b314f21c0dda1c635f88bbbd7348bc50ab
   BLMonitor: bf154c053ee2012c20bd26f14117ff34234ae62e
   BLProtocol: 117a8795dac21bb0f9e7f4ed79efbd965319e1af
+  BLRouter: 69e758f1ae2c821e14faf00f76670d3c92c43f98
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MMKV: 86859fdfa2b0b21db1fd6e48788474a6416a2c77
+  MMKVCore: 3d16ce9f7d411e135020915fde98a056859a1efa
 
-PODFILE CHECKSUM: 9fdfd17c60c40505114f3ade3d0fc4d62a13dc50
+PODFILE CHECKSUM: 2aa47867972ed70d3b9add4ec67c804b6a6dd914
 
 COCOAPODS: 1.16.2
